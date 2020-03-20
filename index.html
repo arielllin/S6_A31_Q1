@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fack User List</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+  <!-- nav -->
+  <div class="container" role="navigation">
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul id='data-mode' class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a id="mode-home" class="nav-top mr-4" href="#"><i class="fa fa-home mr-1 nav"></i>Home<span
+                class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a id="mode-favorite" class="nav-top mr-4" href="#"><i class="fa fa-heart-o mr-1 nav"></i>My Favorite</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a id="mode-gender" class="nav-top mr-4 dropdown-toggle nonact" href="#" role="button"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user mr-2 nav"></i>All
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a id="mode-male" class="dropdown-item" href="#">male</a>
+              <a id="mode-female" class="dropdown-item" href="#">feamle</a>
+            </div>
+          </li>
+        </ul>
+        <form id="search" class="form-inline">
+          <div class="input-group">
+            <input type="text" id="searchBar" class="searchbar"
+              onkeyup="value=value.replace(/[^\a-\z\A-\Z0-9\u4E00-\u9FA5]/g,'')" placeholder="Search Name...">
+            <button type="submit" class="search-icon"><i class="fa fa-search"></i></button>
+          </div>
+        </form>
+      </div>
+      <!-- <button id="refresh" class="icon"><i class="fa fa-repeat"></i></button> -->
+    </nav>
+  </div>
+
+  <div class="container" id="mode">
+    <div class="row">
+      <div class="col-auto col-lg-11">
+        <h4 class="title md">Fack User List</h4>
+      </div>
+      <div class="form-inline col-auto col-lg-1">
+        <div class="md"><i id="mode-cards" class="fa fa-th mr-2" aria-hidden="true"></i></div>
+        <div class="md"><i id="mode-list" class="fa fa-bars mr-2" aria-hidden="true"></i></div>
+      </div>
+      <div id="user" class="row justify-content-around">
+        <!-- User卡片 -->
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="userModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div id="modal-content" class="modal-content">
+          <!-- model content -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Pagination -->
+    <nav aria-label="Page navigation example">
+      <ul id="pagination" class="pagination justify-content-center">
+        <!-- <li class="page-item">
+        <a class="page-link" href="#" aria-label="Previous">
+          <span aria-hidden="true">&laquo;</span>
+          <span class="sr-only">Previous</span>
+        </a>
+      </li> -->
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <!-- <li class="page-item">
+        <a class="page-link" href="#" aria-label="Next">
+          <span aria-hidden="true">&raquo;</span>
+          <span class="sr-only">Next</span>
+        </a>
+      </li> -->
+      </ul>
+    </nav>
+
+    <!-- 引入js -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"></script>
+</body>
+
+</html>

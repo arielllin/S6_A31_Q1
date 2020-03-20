@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fack User List</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+  <!-- nav -->
+  <div class="container" role="navigation">
+    <nav class=" navbar navbar-expand-lg navbar-light">
+      <a class="navbar-brand" href="index.html"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">Home<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="favorite.html">My Favorite</a>
+          </li>
+        </ul>
+        <form id="search" class="form-inline">
+          <div class="input-group">
+            <input type="text" id="searchBar" class="searchbar"
+              onkeyup="value=value.replace(/[^\a-\z\A-\Z0-9\u4E00-\u9FA5]/g,'')" placeholder="Search Name...">
+            <button type="submit" class="search-icon"><i class="fa fa-search"></i></button>
+          </div>
+        </form>
+      </div>
+      <!-- <button id="refresh" class="icon"><i class="fa fa-repeat"></i></button> -->
+    </nav>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h4 class="title">Fack User List</h4>
+      </div>
+      <div id="user" class="row justify-content-around">
+        <!-- User卡片 -->
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="userModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div id="modal-content" class="modal-content">
+          <!-- model content -->
+        </div>
+      </div>
+    </div>
+
+    <!-- 引入js -->
+    <script src="favorite.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"></script>
+</body>
+
+</html>
